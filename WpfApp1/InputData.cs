@@ -12,5 +12,6 @@ namespace WpfApp1
         public int NOPTS { get; set; }
         public float[] X { get; set; }
         public float[] Y { get; set; }
+        public float[] COEF { get; set; }
     }
 }

@@ -172,6 +172,15 @@ namespace WpfApp1
                 Iter--;
             }
         }
+        public static float CalculateHRV(float X, float[] COEF)
+        {
+            float Y=0;
+            for(int i = 0; i < COEF.Length;i++)
+            {
+                Y += COEF[i] * (float)Math.Pow(X, i);
+            }
+            return Y;
+        }
     }
 }
 

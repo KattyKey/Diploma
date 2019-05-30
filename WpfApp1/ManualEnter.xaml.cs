@@ -49,14 +49,14 @@ namespace WpfApp1
             
             try
             {
-                if (Convert.ToInt32(TextBoxDegree.Text) > 1 && Convert.ToInt32(TextBoxDegree.Text) <= 10)
+                if (Convert.ToInt32(TextBoxDegree.Text) > 1 && Convert.ToInt32(TextBoxDegree.Text) < 10)
                 {
                     _inputData.DEGREE = Convert.ToInt32(TextBoxDegree.Text);
                 }
                 else
                 {
                     TextBoxDegree.Text = "";
-                    TextDegreeError.Text = "Value should be grater then 1 and equal or less then 10";
+                    TextDegreeError.Text = "Value should be grater then 1 and less then 10";
                 }
                 if (Convert.ToInt32(TextBoxNumberElements.Text) > 0)
                 {

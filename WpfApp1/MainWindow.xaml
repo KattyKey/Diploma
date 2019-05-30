@@ -7,11 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Use DB Data" HorizontalAlignment="Left" Height="36" Margin="75,56,0,0" VerticalAlignment="Top" Width="114"/>
-        <Button Content="Manual enter" HorizontalAlignment="Left" Height="36" Margin="530,56,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click"/>
-        <Button Content="Calculate" HorizontalAlignment="Left" Margin="298,120,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.491,-0.891"
-                />
-        <TextBlock Name="Info" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="75,161,0,0" Height="224" Width="382"/>
 
+        <Button Content="Use DB Data" HorizontalAlignment="Left" Height="36" Margin="111,33,0,0" VerticalAlignment="Top" Width="114"/>
+        <Button Content="Manual enter" HorizontalAlignment="Left" Height="36" Margin="519,33,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click"/>
+        <ScrollViewer HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="10,127,0,0" Height="224" Width="435" VerticalScrollBarVisibility="Visible">
+            <TextBlock Name="Info" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="325"/>
+        </ScrollViewer>
+        <TextBlock HorizontalAlignment="Left" Margin="75,106,0,0" TextWrapping="Wrap" Text="Coeficient Calculation Result" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Enter Cloud base" VerticalAlignment="Top" Margin="496,169,0,0"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Predicted HRV" VerticalAlignment="Top" Margin="509,230,0,0"/>
+        <TextBox Name="TextBoxCB" 
+                 HorizontalAlignment="Left" Height="23" Margin="591,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" 
+                 
+                 TextChanged="CB_TextChanged"/>
+        <TextBox Name="ResultHRV" HorizontalAlignment="Left" Margin="591,223,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="23" Width="120" IsReadOnly="True"/>
+        <TextBlock Name="CBError" HorizontalAlignment="Left" Margin="559,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Foreground="Red"/>
     </Grid>
 </Window>
