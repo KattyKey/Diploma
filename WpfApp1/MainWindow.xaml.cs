@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BL;
 
 
 namespace WpfApp1
@@ -40,6 +41,7 @@ namespace WpfApp1
             if(man.ShowDialog() == true)
             {
                 firstCalc();
+                CBError.Text = "";
             }
         }
         public void firstCalc()
@@ -70,12 +72,23 @@ namespace WpfApp1
                 {
                     float X = (float)Convert.ToDouble(TextBoxCB.Text);
                     float Y = Approximation_Calculation.CalculateHRV(X, _inputData.COEF);
-                    ResultHRV.Text = Convert.ToString(Y);                   
+                    ResultHRV.Text = Convert.ToString(Y);
+                    CBError.Text = "";
                 }
             }
             catch
             {
                 CBError.Text = "Calculate coeficients first";
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Database man = new Database(out _inputData);
+            if (man.ShowDialog() == true)
+            {
+                firstCalc();
+                CBError.Text = "";
             }
         }
     }

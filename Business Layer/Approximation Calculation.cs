@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApp1
+namespace BL
 {
-    class Approximation_Calculation
+    public class Approximation_Calculation
     {
         public static void Calculation(int DEGREE,int NOPTS, float[] X, float[] Y, float[] COEF)
         {

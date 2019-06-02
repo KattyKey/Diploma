@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
+        Title="Window1" Height="450" Width="400">
     <Grid>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Enter Degree" VerticalAlignment="Top" Margin="110,43,0,0"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Enter number of elements" VerticalAlignment="Top" Margin="42,94,0,0"/>

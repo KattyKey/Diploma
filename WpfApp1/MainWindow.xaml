@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
 
-        <Button Content="Use DB Data" HorizontalAlignment="Left" Height="36" Margin="111,33,0,0" VerticalAlignment="Top" Width="114"/>
+        <Button Content="Use DB Data" HorizontalAlignment="Left" Height="36" Margin="111,33,0,0" VerticalAlignment="Top" Width="114" Click="Button_Click_1"/>
         <Button Content="Manual enter" HorizontalAlignment="Left" Height="36" Margin="519,33,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click"/>
         <ScrollViewer HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="10,127,0,0" Height="224" Width="435" VerticalScrollBarVisibility="Visible">
             <TextBlock Name="Info" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="325"/>
