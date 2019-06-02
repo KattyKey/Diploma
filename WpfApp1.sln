@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{215D658E-A658-4BB3-AEAE-DA1E61306B79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "Business Layer\BL.csproj", "{8E9AF7E0-91D1-4432-8C4C-ACF95B34943B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BL", "Business Layer\BL.csproj", "{8E9AF7E0-91D1-4432-8C4C-ACF95B34943B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLL", "DLL\DLL.csproj", "{D0D5278E-266B-4D6C-8E48-E02E34C91535}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8E9AF7E0-91D1-4432-8C4C-ACF95B34943B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E9AF7E0-91D1-4432-8C4C-ACF95B34943B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E9AF7E0-91D1-4432-8C4C-ACF95B34943B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0D5278E-266B-4D6C-8E48-E02E34C91535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0D5278E-266B-4D6C-8E48-E02E34C91535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0D5278E-266B-4D6C-8E48-E02E34C91535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D5278E-266B-4D6C-8E48-E02E34C91535}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

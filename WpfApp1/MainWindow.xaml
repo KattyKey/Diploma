@@ -22,5 +22,7 @@
                  TextChanged="CB_TextChanged"/>
         <TextBox Name="ResultHRV" HorizontalAlignment="Left" Margin="591,223,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="23" Width="120" IsReadOnly="True"/>
         <TextBlock Name="CBError" HorizontalAlignment="Left" Margin="559,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Foreground="Red"/>
+        <Button Content="Add to DB" HorizontalAlignment="Left" Margin="571,290,0,0" VerticalAlignment="Top" Width="120" Height="42" Click="Button_Add_Click" />
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="282" VerticalAlignment="Top" Width="325" Margin="459,92,0,0" />
     </Grid>
 </Window>

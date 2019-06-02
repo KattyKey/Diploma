@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Business Layer\BL.csproj" />
+    <ProjectReference Include="..\WpfApp1\WpfApp1.csproj" />
+  </ItemGroup>
+
+</Project>
