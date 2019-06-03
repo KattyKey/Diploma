@@ -24,8 +24,7 @@ namespace dl
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand); // создаём обработчик
             sqlDataAdapter.Fill(dataTable);                                 // возращаем таблицу с результатом
 
-            return dataTable;
-            
+            return dataTable;            
         }
         public void Insert(string TextOfCommand)
         {
