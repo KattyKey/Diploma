@@ -11,11 +11,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using BL;
+using BLL;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
 using System.Text.RegularExpressions;
+
 
 namespace WpfApp1
 {
@@ -44,37 +45,41 @@ namespace WpfApp1
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             String selectSQL = "Select * FROM All_Data";
-            Select(selectSQL,0,1);
+            ConnectDB _con = new ConnectDB();
+            _con.Create(selectSQL, 0, 1, _inputData);
+           
         }
         private void Button_Before_Click(object sender, RoutedEventArgs e)
         {
             String selectSQL = "Select * FROM Inputed_Values";
-            Select(selectSQL,2,3);
+            ConnectDB _con = new ConnectDB();
+            _con.Create(selectSQL, 2, 3, _inputData);
+           // Select(selectSQL,2,3);
         }
-        public void Select(String selectSQL,int iX,int iy) // функция подключения к базе данных и обработка запросов
-        {
-         //   String selectSQL = "Select * FROM All_Data";
-            DataTable dataTable = new DataTable("dataBase");                // создаём таблицу в приложении
-                                                                            // подключаемся к базе данных
-            connectionString = "Data Source=WIN-G54R6C1QK3D;Initial Catalog=CalcResult;Integrated Security=True";
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
-            sqlConnection.Open();                                           // открываем базу данных
-            SqlCommand sqlCommand = sqlConnection.CreateCommand();          // создаём команду
-            sqlCommand.CommandText = selectSQL;                             // присваиваем команде текст
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand); // создаём обработчик
-            sqlDataAdapter.Fill(dataTable);                                 // возращаем таблицу с результатом
+        //public void Select(String selectSQL,int iX,int iy) // функция подключения к базе данных и обработка запросов
+        //{
+        // //   String selectSQL = "Select * FROM All_Data";
+        //    DataTable dataTable = new DataTable("dataBase");                // создаём таблицу в приложении
+        //                                                                    // подключаемся к базе данных
+        //    connectionString = "Data Source=WIN-G54R6C1QK3D;Initial Catalog=CalcResult;Integrated Security=True";
+        //    SqlConnection sqlConnection = new SqlConnection(connectionString);
+        //    sqlConnection.Open();                                           // открываем базу данных
+        //    SqlCommand sqlCommand = sqlConnection.CreateCommand();          // создаём команду
+        //    sqlCommand.CommandText = selectSQL;                             // присваиваем команде текст
+        //    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand); // создаём обработчик
+        //    sqlDataAdapter.Fill(dataTable);                                 // возращаем таблицу с результатом
 
-            _inputData.NOPTS = dataTable.Rows.Count;
-            _inputData.X = new float[_inputData.NOPTS];
-            _inputData.Y = new float[_inputData.NOPTS];
+        //    _inputData.NOPTS = dataTable.Rows.Count;
+        //    _inputData.X = new float[_inputData.NOPTS];
+        //    _inputData.Y = new float[_inputData.NOPTS];
 
-            for (int i = 0; i < dataTable.Rows.Count; i++) { // перебираем данные
-                _inputData.X[i] = (float)Convert.ToDouble(dataTable.Rows[i][iX]);
-                _inputData.Y[i] = (float)Convert.ToDouble(dataTable.Rows[i][iy]);
+        //    for (int i = 0; i < dataTable.Rows.Count; i++) { // перебираем данные
+        //        _inputData.X[i] = (float)Convert.ToDouble(dataTable.Rows[i][iX]);
+        //        _inputData.Y[i] = (float)Convert.ToDouble(dataTable.Rows[i][iy]);
                
-            }
+        //    }
            
-        }
+        //}
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {

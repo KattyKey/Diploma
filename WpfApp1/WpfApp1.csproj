@@ -120,9 +120,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Business Layer\BL.csproj">
-      <Project>{8e9af7e0-91d1-4432-8c4c-acf95b34943b}</Project>
-      <Name>BL</Name>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{7ae57f2e-1d56-4244-b7c0-eaea59304cc2}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dl\dl.csproj">
+      <Project>{56f4e73f-d738-4970-868a-ac8beb2277ca}</Project>
+      <Name>dl</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BL;
+using BLL;
 
 
 namespace WpfApp1
@@ -39,7 +39,7 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Window1 man = new Window1(out _inputData);
+            Window1 man = new Window1( out _inputData);
             if(man.ShowDialog() == true)
             {
                 firstCalc();
@@ -97,22 +97,8 @@ namespace WpfApp1
         }
         private void Button_Add_Click(object sender, RoutedEventArgs e)
         {
-            //string TextOfCommand = "Update Inputed_Values set Date='"+DateTime.Now.ToString("MM/dd/yyyy")+"', Time='"+ DateTime.Now.ToString("hh:mm tt")+"', CB_input ='"+ (float)Convert.ToDouble(TextBoxCB.Text) + "', HRV_calc='"+(float)Convert.ToDouble(ResultHRV.Text)+"' ";
-            DataTable dataTable = new DataTable("dataBase");                // создаём таблицу в приложении
-            //                                                                // подключаемся к базе данных
-            string TextOfCommand = "Insert Into Inputed_Values ( Date, Time,CB_input,HRV_calc) VALUES('" + DateTime.Now.ToString("MM/dd/yyyy") + "', '"
-                    + DateTime.Now.ToString("hh:mm tt") + "', '" + (float)Convert.ToDouble(TextBoxCB.Text)
-                    + "', ' " + (float)Convert.ToDouble(ResultHRV.Text) + " ') ";
-
-            string connectionString = "Data Source=WIN-G54R6C1QK3D;Initial Catalog=CalcResult;Integrated Security=True";
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
-            sqlConnection.Open();                                           // открываем базу данных
-            
-            SqlCommand updateCommand = new SqlCommand(TextOfCommand, sqlConnection);
-            
-            updateCommand.ExecuteNonQuery();
-
-
+            ConnectDB _connect = new ConnectDB();
+            _connect.AddToDB((float)Convert.ToDouble(TextBoxCB.Text), (float)Convert.ToDouble(ResultHRV.Text));
         }
     }
 }
