@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Database" Height="450" Width="400">
+        Title="Database" Height="337.2" Width="400">
     <Grid>
-        <Button Content="Use all database records" HorizontalAlignment="Left" Margin="102,27,0,0" VerticalAlignment="Top" Width="147" Click="Button_Click" Height="37"/>
-        <TextBlock HorizontalAlignment="Left" Margin="19,167,0,0" TextWrapping="Wrap" Text="Input Degree" VerticalAlignment="Top"/>
-        <TextBox Name="DegreeDB" HorizontalAlignment="Left" Height="23" Margin="102,166,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"
+        <Button Content="Use all database records" HorizontalAlignment="Left" Margin="19,24,0,0" VerticalAlignment="Top" Width="365" Click="Button_Click" Height="37"/>
+        <TextBlock HorizontalAlignment="Left" Margin="40,173,0,0" TextWrapping="Wrap" Text="Input Degree" VerticalAlignment="Top"/>
+        <TextBox Name="DegreeDB" HorizontalAlignment="Left" Height="23" Margin="125,166,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="247"
                   PreviewTextInput="TextBox_PreviewTextInput" />
-        <Button Content="OK" HorizontalAlignment="Left" Margin="40,310,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <TextBlock Name="ErrorDegreeDB" HorizontalAlignment="Left" Margin="102,189,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="148"/>
-        <Button Content="Use all inputted before" HorizontalAlignment="Left" Margin="103,93,0,0" VerticalAlignment="Top" Width="147" Click="Button_Before_Click" Height="37"/>
+        <Button Content="OK" HorizontalAlignment="Left" Margin="35,246,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <TextBlock Name="ErrorDegreeDB" HorizontalAlignment="Left" Margin="125,189,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="247"/>
+        <Button Content="Use all inputted before" HorizontalAlignment="Left" Margin="19,93,0,0" VerticalAlignment="Top" Width="365" Click="Button_Before_Click" Height="37"/>
+        <Button Content="Cansel" HorizontalAlignment="Left" Margin="285,246,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
 
     </Grid>
 </Window>
