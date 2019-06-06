@@ -26,6 +26,9 @@ namespace WpfApp1
     public partial class MainWindow : Window
     {
         private InputData _inputData;
+        Database dat;
+        ManualEnter man;
+        Approximation_Calculation _calc;
         private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             var textBox = sender as TextBox;
@@ -39,7 +42,7 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Window1 man = new Window1( out _inputData);
+             man = new ManualEnter( out _inputData);
             if(man.ShowDialog() == true)
             {
                 firstCalc();
@@ -49,7 +52,8 @@ namespace WpfApp1
         public void firstCalc()
         {
             _inputData.COEF = new float[_inputData.DEGREE + 1];
-            Approximation_Calculation.Calculation(_inputData.DEGREE, _inputData.NOPTS, _inputData.X, _inputData.Y, _inputData.COEF);
+            _calc = new Approximation_Calculation();
+            _calc.Calculation(_inputData.DEGREE, _inputData.NOPTS, _inputData.X, _inputData.Y, _inputData.COEF);
             
             Info.Text=string.Format("{0}", "ORDER    COEFFICIENT\n");
             if (_inputData.NOPTS > 0)
@@ -61,7 +65,7 @@ namespace WpfApp1
                 Info.Text += string.Format("{0}", "Y Values\n");
                 for (int i = 0; i < _inputData.NOPTS; i++)
                 {
-                    Info.Text += string.Format("{0}     {1}, {2}", i, _inputData.Y[i], '\n');
+                    Info.Text += string.Format("{0}     {1}, {2}", i+1, _inputData.Y[i], '\n');
                 }
 
             }
@@ -88,8 +92,8 @@ namespace WpfApp1
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Database man = new Database(out _inputData);
-            if (man.ShowDialog() == true)
+             dat = new Database(out _inputData);
+            if (dat.ShowDialog() == true)
             {
                 firstCalc();
                 CBError.Text = "";

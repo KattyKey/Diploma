@@ -20,10 +20,10 @@ namespace WpfApp1
     /// Логика взаимодействия для Window1.xaml
     /// </summary>
     /// 
-    public partial class Window1 : Window
+    public partial class ManualEnter : Window
     {
         private InputData _inputData;
-        public Window1(out InputData inputData)
+        public ManualEnter(out InputData inputData)
         {
             InitializeComponent();
             _inputData = new InputData();
